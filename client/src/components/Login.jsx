@@ -16,7 +16,11 @@ const Login = () => {
           <label>Password</label>
           <input type="text" onChange={(e) => setPassword(e.target.value)} />
         </div>
-          {console.log(username, password)}
+        <button className='btn link' onClick={()=>(
+          alert(username + " " + password)
+        )}>
+          Login
+        </button>
       </div>
     </div>
   )
