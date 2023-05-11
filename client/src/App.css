@@ -11,7 +11,7 @@ body {
     width: 50%;
     margin: auto;
     margin-top: 20vh;
-    border: 5px solid rgb(171, 171, 171);
+    border: 5px solid rgb(99, 195, 224);
     border-radius: 20px;
     background-color: beige;
 }
@@ -35,7 +35,7 @@ h1 {
 }
 
 .btn{
-    margin-bottom: 5rem;
+    margin-bottom: 70px;
 }
 
 .link:hover {
@@ -44,4 +44,29 @@ h1 {
     color: blue;
     transform: scale(1.2);
     transition: ease-in-out 0.2s;
+}
+
+h2 {
+    font-size: 3vw;
+    color: rgb(27, 233, 72);   
+}
+.formContent{
+    margin-top: 10px;
+}
+
+.inputBox{
+    margin-bottom: 20px;
+}
+
+.inputBox label{
+    font-size: 16px;
+    color:rgb(7, 52, 142);
+    margin: 0 3rem;
+}
+
+.inputBox input{
+    font-size: 15px;
+    border: 2px solid rgb(93, 235, 96);
+    padding: 15px;
+    border-radius: 20px;
 }
