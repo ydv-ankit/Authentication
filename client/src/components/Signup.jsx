@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 const Signup = () => {
   const [username, setUsername] = useState('')
@@ -10,19 +10,31 @@ const Signup = () => {
       <div className="formContent">
         <div className="inputBox">
           <label>Username</label>
-          <input type="text" onChange={(e) => setUsername(e.target.value)} />
+          <input type="text" name='username' onChange={(e) => setUsername(e.target.value)} placeholder='username'/>
         </div>
         <div className="inputBox">
           <label>Password</label>
-          <input type="text" onChange={(e) => setPassword(e.target.value)} />
+          <input type="text" name='password' onChange={(e) => setPassword(e.target.value)} placeholder='password'/>
         </div>
-        <button className='btn link' onClick={() => (
-          alert(username + " " + password)
-        )}>
-          Create User
+        <button
+          type='submit'
+          onClick={async (e) => {
+            const response = await fetch(`http://localhost:8080/signup`, {
+              method: "POST",
+              body: JSON.stringify({
+                username: username,
+                password: password,
+              }),
+            });
+
+            const json = await response.json();
+            console.log(json);
+          }}
+        >
+          SIGNUP
         </button>
-      </div>
     </div>
+    </div >
   )
 }
 
