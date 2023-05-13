@@ -91,4 +91,25 @@ app.post('/login', (req, res) => {
     }
 })
 
+app.post('/admin', (req, res) => {
+    const password = req.body.pass;
+    let usersData = [];
+
+    try {
+        const jsonString = fs.readFileSync("./db/data.json", "utf-8");
+        var data = JSON.parse(jsonString);
+    } catch (err) {
+        res.json({ msg: "Error occured !!" })
+    }
+
+    Object.entries(data).forEach((element) => {
+        usersData.push(element[1]);
+    })
+    if (password == "m") {
+        res.json({ msg: "logged in", data: usersData })
+    } else {
+        res.json({ msg: "invalid credentials", data: []})
+    }
+})
+
 app.listen(PORT, () => console.log("server running at http://localhost:" + PORT))
