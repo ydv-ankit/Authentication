@@ -36,18 +36,31 @@ app.post('/signup', (req, res) => {
         var data = JSON.parse(jsonString);
     } catch (err) {
         console.log(err);
-        res.send("Error!! Cannot create account")
+        res.json({ msg: "Error!! Cannot create account" })
     }
 
-    data = [...data, dataToAppend]
-
-    fs.writeFile('./db/data.json', JSON.stringify(data), err => {
-        if (err) {
-            res.send('Error signing up', err)
-        } else {
-            res.send("Successfully signed up")
+    let found = false;
+    Object.entries(data).forEach((element) => {
+        let user = element[1].user
+        if (user == username) {
+            found = true;
+            return;
         }
     })
+
+    if (found) {
+        res.json({ msg: "username already exists !!" })
+    } else {
+        data = [...data, dataToAppend]
+
+        fs.writeFile('./db/data.json', JSON.stringify(data), err => {
+            if (err) {
+                res.json({ msg: "Error signing up" })
+            } else {
+                res.json({ msg: "user added successfully" })
+            }
+        })
+    }
 })
 
 app.post('/login', (req, res) => {
@@ -58,27 +71,24 @@ app.post('/login', (req, res) => {
         const jsonString = fs.readFileSync("./db/data.json", "utf-8");
         var data = JSON.parse(jsonString);
     } catch (err) {
-        console.log(err);
-        res.send("Error!! Cannot create account")
+        res.json({ msg: "Error!! Cannot create account" })
     }
     let found = false;
-    Object.entries(data).forEach((element)=>{
+    Object.entries(data).forEach((element) => {
         let user = element[1].user
         let pass = element[1].pass
-        if(user==username){
-            if(pass == password){
+        if (user == username) {
+            if (pass == password) {
                 found = true;
                 return;
             }
         }
     })
-    if(found){
-        res.send("logged in")
-    }else{
-        res.send("invalid credentials")
+    if (found) {
+        res.json({ msg: "logged in" })
+    } else {
+        res.json({ msg: "invalid credentials" })
     }
-    
-
 })
 
 app.listen(PORT, () => console.log("server running at http://localhost:" + PORT))

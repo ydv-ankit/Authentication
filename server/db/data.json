@@ -1,18 +1,1 @@
-[
-    {
-        "user": "cyfer",
-        "pass": "123"
-    },
-    {
-        "user": "ankit",
-        "pass": "pass123"
-    },
-    {
-        "user": "ankit2",
-        "pass": "pass1234"
-    },
-    {
-        "user": "ankit3",
-        "pass": "pass12345"
-    }
-]
+[{"user":"cyfer","pass":"123"},{"user":"ankit","pass":"pass123"},{"user":"ankit2","pass":"pass1234"},{"user":"ankit3","pass":"pass12345"},{"user":"ankit32","password":"pass12345"},{"user":"","password":""},{"user":"cutexboi","password":"ankit123"},{"user":"jhdsfj","password":"hsdkjhvsd"},{"user":"asfdjh","password":"nfkvhdiuf"},{"user":"ankit3212","password":"password123"},{"user":"ankit321","password":"pass123"},{"user":"ankit321432","password":"pass123"},{"user":"ankit432","password":"anjkdhfk"},{"user":"ankit4324ir4","password":"anjkdhfk"},{"user":"ankit883rf","password":"dhsgd"},{"user":"aadfkedsankit883rf","password":"dhsgd"}]
