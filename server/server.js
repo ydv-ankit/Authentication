@@ -43,7 +43,7 @@ app.post('/signup', (req, res) => {
 
     fs.writeFile('./db/data.json', JSON.stringify(data), err => {
         if (err) {
-            res.send('Error writing file', err)
+            res.send('Error signing up', err)
         } else {
             res.send("Successfully signed up")
         }
