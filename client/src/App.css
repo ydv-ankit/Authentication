@@ -70,3 +70,21 @@ h2 {
     padding: 15px;
     border-radius: 20px;
 }
+
+.formContent button {
+    margin-left: 75%;
+    margin-bottom: 20px;
+    font-size: 20px;
+    padding: 14px;
+    border-radius: 20px;
+    color: aqua;
+    background-color: rgb(128, 128, 237);
+    border: 2px solid rgb(85, 196, 16);
+    cursor: pointer;
+}
+
+.formContent button:hover{
+    color: rgb(212, 255, 0);
+    background-color: rgb(34, 34, 220);
+    border: 2px solid rgb(4, 58, 235);
+}
