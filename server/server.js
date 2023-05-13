@@ -50,4 +50,35 @@ app.post('/signup', (req, res) => {
     })
 })
 
+app.post('/login', (req, res) => {
+    const username = req.body.user;
+    const password = req.body.pass;
+
+    try {
+        const jsonString = fs.readFileSync("./db/data.json", "utf-8");
+        var data = JSON.parse(jsonString);
+    } catch (err) {
+        console.log(err);
+        res.send("Error!! Cannot create account")
+    }
+    let found = false;
+    Object.entries(data).forEach((element)=>{
+        let user = element[1].user
+        let pass = element[1].pass
+        if(user==username){
+            if(pass == password){
+                found = true;
+                return;
+            }
+        }
+    })
+    if(found){
+        res.send("logged in")
+    }else{
+        res.send("invalid credentials")
+    }
+    
+
+})
+
 app.listen(PORT, () => console.log("server running at http://localhost:" + PORT))
