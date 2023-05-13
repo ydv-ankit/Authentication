@@ -20,18 +20,20 @@ const Signup = () => {
           type='submit'
           onClick={async (e) => {
             const response = await fetch(`http://localhost:8080/signup`, {
-              method: "POST",
+              method: "POST" ,
+              headers: {
+                'Content-Type': 'application/json',
+              },
               body: JSON.stringify({
-                username: username,
-                password: password,
+                user: username,
+                pass: password,
               }),
             });
-
+            console.log(response);
             const json = await response.json();
             console.log(json);
-          }}
-        >
-          SIGNUP
+          }}>
+          Sign Up
         </button>
     </div>
     </div >
