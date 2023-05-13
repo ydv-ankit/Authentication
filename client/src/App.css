@@ -10,10 +10,12 @@ body {
     justify-content: center;
     width: 50%;
     margin: auto;
+    padding: 10px;
     margin-top: 20vh;
     border: 5px solid rgb(99, 195, 224);
     border-radius: 20px;
     background-color: beige;
+    min-height: 50vh;
 }
 
 h1 {
@@ -23,9 +25,9 @@ h1 {
 
 .link{
     text-decoration: none;
-    margin: 90px;
+    margin: 80px;
     margin-bottom: 4rem;
-    border: 5px solid rgb(121, 121, 237);
+    border: 5px solid rgb(247, 247, 247);
     padding: 1rem;
     font-size: 1.5rem;
     border-radius: 25px;
@@ -36,6 +38,7 @@ h1 {
 
 .btn{
     margin-bottom: 70px;
+    margin-top: 40px;
 }
 
 .link:hover {

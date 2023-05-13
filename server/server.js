@@ -29,7 +29,7 @@ app.post('/signup', (req, res) => {
     const username = req.body.user;
     const password = req.body.pass;
 
-    const dataToAppend = { 'user': username, 'password': password };
+    const dataToAppend = { 'user': username, 'pass': password };
 
     try {
         const jsonString = fs.readFileSync("./db/data.json", "utf-8");
@@ -74,9 +74,11 @@ app.post('/login', (req, res) => {
         res.json({ msg: "Error!! Cannot create account" })
     }
     let found = false;
+    console.log(username, password)
     Object.entries(data).forEach((element) => {
         let user = element[1].user
         let pass = element[1].pass
+        console.log(user, pass)
         if (user == username) {
             if (pass == password) {
                 found = true;

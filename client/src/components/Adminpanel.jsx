@@ -7,14 +7,14 @@ export const Adminpanel = () => {
     const [msg, setMsg] = useState('');
 
     if (data.length !== 0 || msg.length !== 0) {
-        if (data.length !== 0) {
+        if (data.length === 0) {
             return (
                 <div className="container">
                     <h2>{msg}</h2>
                     <h5>No data</h5>
                     <Link to="/" className='link'>Logout</Link>
                 </div>
-            )
+            );
         }
         else {
             return (
@@ -38,7 +38,7 @@ export const Adminpanel = () => {
                     </div>
                     <Link to="/" className='link'>Logout</Link>
                 </div>
-            )
+            );
         }
     } else {
         return (
