@@ -12,11 +12,11 @@ const Signup = () => {
       <div className="formContent">
         <div className="inputBox">
           <label>Username</label>
-          <input type="text" name='username' onChange={(e) =>( setUsername(e.target.value, setMessage('')))} placeholder='username'/>
+          <input type="text" name='username' onChange={(e) =>{setUsername(e.target.value); setMessage('')}} placeholder='username'/>
         </div>
         <div className="inputBox">
           <label>Password</label>
-          <input type="text" name='password' onChange={(e) =>( setPassword(e.target.value), setMessage(''))} placeholder='password'/>
+          <input type="text" name='password' onChange={(e) =>{ setPassword(e.target.value); setMessage('')}} placeholder='password'/>
         </div>
         <button
           type='submit'
